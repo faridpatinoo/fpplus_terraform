@@ -15,6 +15,7 @@ resource "azurerm_service_plan" "ASP_backend" {
   zone_balancing_enabled = false
 }
 
+# Get a Key Vault to store the password
 data "azurerm_key_vault" "terraform_keyvault" {
   name                = "keyvault-fp-plus"
   resource_group_name = azurerm_resource_group.backend-resource-group.name
